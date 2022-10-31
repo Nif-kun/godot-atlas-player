@@ -3,20 +3,17 @@
 [ext_resource path="res://addons/AtlasPlayer/atlas_player.gd" type="Script" id=1]
 [ext_resource path="res://assets/piffle-error.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 352, 498 )
 
-[node name="Tester" type="HBoxContainer"]
+[node name="AtlasPlayer" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-
-[node name="AtlasPlayer" type="TextureRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
 size_flags_horizontal = 3
-texture = SubResource( 3 )
+size_flags_vertical = 3
+texture = SubResource( 1 )
 stretch_mode = 4
 script = ExtResource( 1 )
 atlas_texture = ExtResource( 4 )
