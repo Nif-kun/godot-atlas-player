@@ -1,5 +1,6 @@
 tool
 extends TextureRect
+class_name AtlasPlayerType
 
 # Self-note:
 # 	Properly customize this when possible. Refer to FlexContainer plugin for better exports.
@@ -91,7 +92,7 @@ func set_atlas_texture(value:Texture):
 	atlas_texture = value
 	if texture is AtlasTexture:
 		texture.atlas = value
-		_update(false)
+		_update()
 
 func get_atlas_texture() -> Texture:
 	return atlas_texture
