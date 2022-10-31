@@ -1,6 +1,5 @@
 tool
 extends TextureRect
-class_name AtlasPlayerType
 
 # Self-note:
 # 	Properly customize this when possible. Refer to FlexContainer plugin for better exports.
