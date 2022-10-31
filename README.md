@@ -3,10 +3,17 @@
 # AtlasContainer <img align="center" alt="icon" width="40px" src="https://raw.githubusercontent.com/Nif-kun/godot-atlas-player/main/addons/AtlasPlayer/res/icon.svg" />
 ### An animation player using a TextureRect to display an AtlasTexture. An addon for the <a href="https://godotengine.org">Godot</a> engine.
  
+* <a href="#description">Description</a></li>
 * <a href="#installation">Installation</a></li>
 * <a href="#usage">Usage</a></li>
 * <a href="#properties">Properties</a></li>
-* <a href="#limitations">Limitations</a></li>
+* <a href="#issues">Issues</a></li>
+
+
+## <a name="description">Description</a>
+Somewhat similar to the AnimatedSprite node, AtlasPlayer is a way to animate an atlas or a sprite sheet. 
+The difference in benefit comes from the adjustable size of AtlasPlayer. In other words, it can be used for UI purposes such as loading screen 
+or even gifs! In truth, it all comes down to what your project is. If this addon fits your need, might as well try it out. 
 
 
 ## <a name="installation">Installation</a>
@@ -16,27 +23,30 @@
 
 
 ## <a name="usage">Usage</a>
-1. Set a grid size using the `Columns` and `Rows` in `Inspector`.
-2. In `Inspector` increase the amount of `Vector2` in `Blocks` property based on the *grid size* (`Columns` × `Rows`). 
-<br /> This is not required but recommended. It would also be better to avoid going beyond *grid size*.
-3. `Vector2`'s `x` acts as span while `y` acts as row. Customize them depending to your need.
-4. Added children within the node will change size and position corresponding to the `Vector2` in `Blocks`. 
-<br />The first `Vector2` corresponds to the first child and so forth.
+1. Create an AtlasPlayer in the current scene and modify the properties in the inspector.
+2. Set an image for the `Atlas Texture`. Recommended to drag and drop the image directly in the inspector.
+3. Based on the number of tiles, set the `Hframe` for width and `Vframe` for height. 
+<br />Example: a character sprite with six tiles of movement, with a width of three (3) tiles and height of two (2).
+<br />The `Hframe` in the scenario would be three (3) and the `Vframe` would be two (2).
+4. Set the `Start Frame` and the `End Frame`. The starting and ending point of the animation.
+5. Adjust the `Speed` of the player to best fit the animation.
+6. Play the scene and see if the sprite plays properly.
 
-**Note: when extending the script, add the `tool` keyword to have the exports show in the `Inspector`.**
+**Note: not required but it is recommended to use `Auto Start` and `Loop` when testing.**
 
 ## <a name="properties">Properties</a>
 Property         | Type             | Definition
 ---------------- | ---------------- | -------------
-Columns          | int              | the width or amount of column the *container* will have, forming a *grid*.
-Rows             | int              | the height or amount of rows the *container* will have, forming a *grid*.
-Blocks           | PoolVector2Array |the placeholder for child nodes within the container. Each `Vector2` represents a block within a *grid*, having its own span (`x`) and row (`y`). It moves from left to right and top to bottom.
-Compact          | boolean          | it fills in the empty spaces within the *container*.
-Limit Visible    | boolean          | it hides children that goes beyond the container's size or outside the size of `Blocks`.
-Disable Min Size | boolean          | it sets the `rect_min_size` of children to `Vector2.ZERO`. This is currently the default as the container can't handle `rect_min_size` of children.
+Atlas Texture    | Texture          | the image texture to be used for the animation. 
+HFrame           | int              | the number of tiles in width.
+VFrame           | int              | the number of tiles in height.
+Start Frame      | int              | the starting tile/frame of the animation.
+End Frame        | int              | the ending tile/frame of the animation.
+Loop             | boolean          | a condition if the animation will loop or not.
+Auto Start       | boolean          | a condition if the animation will start upon entering the SceneTree.
 
 
-## <a name="Issues">Issues</a>
+## <a name="issues">Issues</a>
 * None as of current...
 
 **Said issues may be fixed in the future updates. However, if you know a way to fix it, do open up an issue or a pull request. Your contribution would be greatly apprciated**
