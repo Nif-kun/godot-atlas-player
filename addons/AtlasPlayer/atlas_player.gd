@@ -42,6 +42,7 @@ func _init():
 func _ready():
 	if texture == null and !(texture is AtlasTexture):
 		texture = AtlasTexture.new()
+	# warning-ignore:RETURN_VALUE_DISCARDED
 	_timer.connect("timeout", self, "_on_timeout")
 	_timer.wait_time = speed
 	_timer.autostart = auto_start
