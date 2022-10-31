@@ -164,8 +164,10 @@ func get_end_frame():
 func set_speed(value):
 	if value >= 0.01:
 		speed = value
+		_timer.wait_time = value
 	else:
 		speed = 0.01
+		_timer.wait_time = 0.01
 
 func get_speed():
 	return speed
@@ -182,6 +184,7 @@ func get_loop():
 # AutoStart setget
 func set_auto_start(value):
 	auto_start = value
+	_timer.autostart = value
 
 func get_auto_start() -> bool:
 	return auto_start
