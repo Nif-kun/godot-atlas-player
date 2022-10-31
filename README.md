@@ -10,7 +10,7 @@
 
 
 ## <a name="installation">Installation</a>
-1. Download the latest version in <a href="https://github.com/Nif-kun/godot-flex-container-plugin/releases">releases</a> or clone the repository.
+1. Download the latest version in <a href="https://github.com/Nif-kun/godot-atlas-player/releases">releases</a> or clone the repository.
 2. Copy the contents of `addons/AtlasPlayer` into your `res://addons/AtlasPlayer` directory.
 3. Enable `Dialogue Manager` in your project plugins.
 
