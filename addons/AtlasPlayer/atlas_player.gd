@@ -146,7 +146,6 @@ func get_start_frame():
 func set_end_frame(value):
 	if value > 0:
 		if value < start_frame:
-			print(value)
 			end_frame = start_frame
 		elif value <= hframe * vframe:
 			end_frame = value
