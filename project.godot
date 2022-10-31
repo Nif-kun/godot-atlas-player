@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "TextureRect",
+"class": "AtlasPlayer",
+"language": "GDScript",
+"path": "res://addons/AtlasPlayer/atlas_player.gd"
+} ]
+_global_script_class_icons={
+"AtlasPlayer": ""
+}
+
 [application]
 
 config/name="AtlasPlayer"
