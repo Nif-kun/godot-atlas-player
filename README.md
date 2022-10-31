@@ -33,7 +33,7 @@ or even gifs! In truth, it all comes down to what your project is. If this addon
 6. Before moving to the next step, it is recommended to turn on the `Auto Start`. Otherwise, use the `start()` function of the node to play the animation.
 7. Play the scene and see if the sprite plays properly.
 
-**Note: the instructions can also be applied in code. See the script for more details such as the start() and stop() function.**
+**Note: the instructions can also be applied in code. See the script for more details such as the `start()` and `stop()` function.**
 
 ## <a name="signals">Signals</a>
 Name           | Definition
