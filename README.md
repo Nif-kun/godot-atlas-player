@@ -1,11 +1,11 @@
-# DESCRIPTION IS UNDER WORK!!!
-
 # AtlasContainer <img align="center" alt="icon" width="40px" src="https://raw.githubusercontent.com/Nif-kun/godot-atlas-player/main/addons/AtlasPlayer/res/icon.svg" />
 ### An animation player using a TextureRect to display an AtlasTexture. An addon for the <a href="https://godotengine.org">Godot</a> engine.
  
 * <a href="#description">Description</a></li>
 * <a href="#installation">Installation</a></li>
 * <a href="#usage">Usage</a></li>
+* <a href="#signals">Signals</a></li>
+* <a href="#functions">Functions</a></li>
 * <a href="#properties">Properties</a></li>
 * <a href="#issues">Issues</a></li>
 
@@ -30,9 +30,22 @@ or even gifs! In truth, it all comes down to what your project is. If this addon
 <br />The `Hframe` in the scenario would be three (3) and the `Vframe` would be two (2).
 4. Set the `Start Frame` and the `End Frame`. The starting and ending point of the animation.
 5. Adjust the `Speed` of the player to best fit the animation.
-6. Play the scene and see if the sprite plays properly.
+6. Before moving to the next step, it is recommended to turn on the `Auto Start`. Otherwise, use the `start()` function of the node to play the animation.
+7. Play the scene and see if the sprite plays properly.
 
-**Note: not required but it is recommended to use `Auto Start` and `Loop` when testing.**
+**Note: the instructions can also be applied in code. See the script for more details such as the start() and stop() function.**
+
+## <a name="signals">Signals</a>
+Name           | Definition
+-------------- | -------------
+Started        | emitted once the animation starts.
+Stopped        | emitted once the animation ends.
+
+## <a name="functions">Functions</a>
+Name                          | Definition
+----------------------------- | -------------
+start(check:bool=true)        | starts the animation. Takes a non-required argument that can be used to stop the animation from reseting frame position.
+stop(check:bool=true)         | stops the animation. Takes a non-required argument that can be used to stop the animation from reseting frame position.
 
 ## <a name="properties">Properties</a>
 Property         | Type             | Definition
