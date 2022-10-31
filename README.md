@@ -1,7 +1,7 @@
 # DESCRIPTION IS UNDER WORK!!!
 
 # AtlasContainer <img align="center" alt="icon" width="40px" src="https://raw.githubusercontent.com/Nif-kun/godot-atlas-player/main/addons/AtlasPlayer/res/icon.svg" />
-### A simple flex container plugin for <a href="https://godotengine.org">Godot</a>.
+### An animation player using a TextureRect to display an AtlasTexture. An addon for the <a href="https://godotengine.org">Godot</a> engine.
  
 * <a href="#installation">Installation</a></li>
 * <a href="#usage">Usage</a></li>
