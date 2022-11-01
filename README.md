@@ -58,6 +58,7 @@ End Frame        | int              | the ending tile/frame of the animation.
 Loop             | boolean          | a condition if the animation will loop or not.
 Auto Start       | boolean          | a condition if the animation will start upon entering the SceneTree.
 
+**Note: each property has its own setget, check the script for more detailed information.**
 
 ## <a name="issues">Issues</a>
 * None as of current...
