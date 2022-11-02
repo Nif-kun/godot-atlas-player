@@ -26,6 +26,7 @@ export var end_frame := 1 setget set_end_frame, get_end_frame
 export var speed := 1.0 setget set_speed, get_speed
 export var loop := true setget set_loop, get_loop
 export var auto_start := false setget set_auto_start, get_auto_start
+export var pause_on_hide := true 
 
 # Private
 var _frame_buffer := 0
@@ -47,6 +48,7 @@ func _ready():
 	_timer.wait_time = speed
 	_timer.autostart = auto_start
 	add_child(_timer)
+	connect("visibility_changed", self, "on_visibility_changed")
 
 
 # Returns an index vector position of the _frame (value taken from start_frame).
@@ -98,7 +100,7 @@ func get_atlas_texture() -> Texture:
 
 
 # HFrame setget
-func set_hframe(value):
+func set_hframe(value:int):
 	if value > 0:
 		hframe = value
 	else:
@@ -106,12 +108,12 @@ func set_hframe(value):
 	_restrict_frame_size()
 	_update()
 
-func get_hframe():
+func get_hframe() -> int:
 	return hframe
 
 
 # VFrame setget:
-func set_vframe(value):
+func set_vframe(value:int):
 	if value > 0:
 		vframe = value
 	else:
@@ -119,12 +121,12 @@ func set_vframe(value):
 	_restrict_frame_size()
 	_update()
 
-func get_vframe():
+func get_vframe() -> int:
 	return vframe
 
 
 # StartFrame setget
-func set_start_frame(value):
+func set_start_frame(value:int):
 	if value > 0:
 		if value <= hframe * vframe:
 			start_frame = value
@@ -138,12 +140,12 @@ func set_start_frame(value):
 	_frame = start_frame
 	_update_position()
 
-func get_start_frame():
+func get_start_frame() -> int:
 	return start_frame
 
 
 # EndFrame setget
-func set_end_frame(value):
+func set_end_frame(value:int):
 	if value > 0:
 		if value < start_frame:
 			end_frame = start_frame
@@ -155,12 +157,12 @@ func set_end_frame(value):
 		end_frame = 1
 	_update_position()
 
-func get_end_frame():
+func get_end_frame() -> int:
 	return end_frame
 
 
 # Speed setget
-func set_speed(value):
+func set_speed(value:float):
 	if value >= 0.01:
 		speed = value
 		_timer.wait_time = value
@@ -168,25 +170,45 @@ func set_speed(value):
 		speed = 0.01
 		_timer.wait_time = 0.01
 
-func get_speed():
+func get_speed() -> float:
 	return speed
 
 
 # Loop setget
-func set_loop(value):
-	loop = value
+func set_loop(flag:bool):
+	loop = flag
 
-func get_loop():
+func get_loop() -> bool:
 	return loop
 
 
 # AutoStart setget
-func set_auto_start(value):
-	auto_start = value
-	_timer.autostart = value
+func set_auto_start(flag:bool):
+	auto_start = flag
+	_timer.autostart = flag
 
 func get_auto_start() -> bool:
 	return auto_start
+
+
+# Timer [node] getter, for more complex need of timer.
+# Note: understand that this directly calls on the node. 
+#       If still not loaded or ready, it can cause null instances.
+func get_timer() -> Timer:
+	return _timer
+
+
+# PauseOnHide setget
+func set_pause_on_hide(flag:bool):
+	pause_on_hide = flag
+
+func get_pause_on_hide() -> bool:
+	return pause_on_hide
+
+
+# Occurs when visibility is changed.
+func on_visibility_changed():
+	_timer.paused = !visible # Pauses the animation if the AtlasPlayer is not visible.
 
 
 # Start and Stop function for the animation to play or end.
