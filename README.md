@@ -13,7 +13,7 @@
 ## <a name="description">Description</a>
 Similar to the AnimatedSprite node, AtlasPlayer is a way to animate an atlas or a sprite sheet. 
 The difference in benefit comes from the adjustable size of AtlasPlayer. In other words, it can be used for UI purposes such as loading screen 
-or even gifs! In truth, it all comes down to what your project is. If this addon fits your need, might as well try it out. 
+or even animated reactions! In truth, it all comes down to what your project is. If this addon fits your need, might as well try it out. 
 
 
 ## <a name="installation">Installation</a>
